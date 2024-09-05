@@ -1,1 +1,1 @@
-3. ročník EPU a OVY
+3. ročník EPU a OV
