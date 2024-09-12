@@ -1,0 +1,53 @@
+:root{
+    --orange: #d88200;
+    --grey: #707070;
+    --darkgrey: #535353;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.nadpisORG{
+    color: var(--orange);
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+}
+
+.nadpisOrg{
+    color: var(--orange);
+    margin: 0px;
+    font-weight: lighter;
+}
+
+.popis{
+    text-align: center;
+    margin: 0px;
+}
+
+.box{
+    margin: 40px 20px;
+}
+
+.box hr{
+    opacity: 30%;
+}
+
+.box p{
+    margin: 30px 40px;
+    color: var(--grey);
+    text-align: center;
+}
+
+.main{
+    margin: 0px 150px;
+}
+
+.nadpis{
+    color: var(--darkgrey);
+    font-size: medium;
+}
+
+.podpis{
+    font-size: small;
+}
