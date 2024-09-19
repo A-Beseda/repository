@@ -1,0 +1,70 @@
+:root{
+    --blue: #0070d8;
+    --darkblue: #0458a7;
+    --grey: #ebebeb;
+    --darkgrey: #c7c7c7;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 10px;
+
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    color: var(--blue);
+    text-align: center;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0px;
+    display: inline-block;
+    background-color: var(--grey);
+    border: 1px solid var(--darkgrey);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label{
+    font-weight: bolder;
+}
+
+.pohlavia label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+hr{
+    border: solid var(--grey) 1px;
+}
+
+input[type=submit] {
+
+    width: 100%;
+  
+    background-color: var(--blue);
+  
+    color: white;
+  
+    padding: 14px 20px;
+  
+    margin: 8px 0;
+  
+    border: none;
+  
+    border-radius: 4px;
+  
+    cursor: pointer;
+  
+  }
+   
+  input[type=submit]:hover {
+  
+    background-color: var(--darkblue);
+  
+  }
+   

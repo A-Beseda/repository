@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulár</title>
+    <link rel="stylesheet" href="modern-normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/action_page.php">
+        <h2>Registračný formulár</h2>
+        <label for="meno">Meno:</label><br>
+        <input type="text" id="meno" name="meno"><br>
+
+        <label for="priezvisko">Priezvisko:</label><br>
+        <input type="text" id="priezvisko" name="priezvisko"><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="text" id="email" name="email"><br><br>     
+
+        <label for="password">Heslo:</label><br>
+        <input type="text" id="password" name="password"><br><br>
+
+        <label for="password">Overenie hesla:</label><br>
+        <input type="text" id="password" name="password"><br><br>
+
+        <label for="gender">Pohlavie:</label>
+        <hr><br>
+        <input type="radio" id="gender" name="gender" value="male"> Muž
+        <input type="radio" id="gender" name="gender" value="female"> Žena
+        <br><br>
+        <hr>
+
+        <br>
+
+        <input type="checkbox" id="terms" name="terms" value="yes">
+        <label for="terms"> Súhlasím s podmienkami</label><br><br><br>
+
+        <label for="countries">Krajna:</label>
+        <select id="countries" name="countries">
+            <option value="sk">Slovensko</option>
+            <option value="cz">Česká republika</option>
+            <option value="pl">Poľsko</option>
+            <option value="de">Nemecko</option>
+            <option value="us">Spojené štáty</option>
+            <option value="uk">Spojené kráľovstvo</option>
+            <option value="fr">Francúzsko</option>
+            <option value="it">Taliansko</option>
+            <option value="es">Španielsko</option>
+        </select>
+
+        <br><br>
+
+        <label for="notes">Poznámky:</label><br>
+        <textarea id="notes" name="notes" rows="5" cols="50"></textarea>
+
+        <br><br>
+
+        <input type="submit" value="Submit">
+      </form> 
+</body>
+</html>
