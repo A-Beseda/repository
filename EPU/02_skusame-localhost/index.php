@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+
+    <?php
+    echo "Prosím funguj!"
+    ?>
+
     <h1>jndbsvVKJD</h1>
 </body>
 </html>
