@@ -1,0 +1,23 @@
+body{
+    padding: 0px 20px;
+}
+
+.prvy{
+    background-color: aliceblue;
+}
+
+.druhy{
+    background-color: aqua;
+}
+
+.treti{
+    background-color: rgb(87, 87, 255);
+}
+
+.stvrty{
+    background-color: brown;
+}
+
+nav{
+    border: 3 px solid red;
+}
