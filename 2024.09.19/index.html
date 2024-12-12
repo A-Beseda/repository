@@ -8,24 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="/action_page.php">
+    <form action="action_page.php" method="post">
         <h2>Registračný formulár</h2>
-        <label for="meno">Meno:</label><br>
-        <input type="text" id="meno" name="meno"><br>
+        <label for="meno"><span style="color: red;">*</span> Meno:</label><br>
+        <input type="text" id="meno" name="meno" required><br>
 
-        <label for="priezvisko">Priezvisko:</label><br>
-        <input type="text" id="priezvisko" name="priezvisko"><br><br>
+        <label for="meno"><span style="color: red;">*</span> Meno:</label><br>
+        <input type="text" id="priezvisko" name="priezvisko"required><br><br>
 
-        <label for="email">E-mail:</label><br>
-        <input type="text" id="email" name="email"><br><br>     
+        <label for="email"><span style="color: red;">*</span> E-mail:</label><br>
+        <input type="text" id="email" name="email"required><br><br>     
 
-        <label for="password">Heslo:</label><br>
-        <input type="text" id="password" name="password"><br><br>
+        <label for="password"><span style="color: red;">*</span> Heslo:</label><br>
+        <input type="text" id="password" name="password"required><br><br>
 
-        <label for="password">Overenie hesla:</label><br>
-        <input type="text" id="password" name="password"><br><br>
+        <label for="password"><span style="color: red;">*</span> Overenie hesla:</label><br>
+        <input type="text" id="password" name="podPassword"required><br><br>
 
-        <label for="gender">Pohlavie:</label>
+        <label for="gender"> Pohlavie:</label>
         <hr><br>
         <input type="radio" id="gender" name="gender" value="male"> Muž
         <input type="radio" id="gender" name="gender" value="female"> Žena
@@ -34,10 +34,11 @@
 
         <br>
 
-        <input type="checkbox" id="terms" name="terms" value="yes">
+        <span style="color: red;">*</span>
+        <input type="checkbox" id="terms" name="terms" value="yes"required>
         <label for="terms"> Súhlasím s podmienkami</label><br><br><br>
 
-        <label for="countries">Krajna:</label>
+        <label for="countries"> Krajna:</label>
         <select id="countries" name="countries">
             <option value="sk">Slovensko</option>
             <option value="cz">Česká republika</option>
@@ -52,12 +53,14 @@
 
         <br><br>
 
-        <label for="notes">Poznámky:</label><br>
+        <label for="notes"> Poznámky:</label><br>
         <textarea id="notes" name="notes" rows="5" cols="50"></textarea>
 
         <br><br>
 
         <input type="submit" value="Submit">
+
+        <span style="color: red;">* Povinné pole</span>
       </form> 
 </body>
 </html>
