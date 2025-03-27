@@ -1,102 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obrat</title>
-</head>
-<body>
-    
-<?php   
-// bol som tu
+<?php
+// Získanie cesty k ploche
+$desktopPath = getenv("USERPROFILE") . "\\Desktop\\report.txt";
 
-function vypis () {
-    $polozky = [
-        'telefon' => [
-            'cena' => 500,
-            'mnozstvo' => 1,
-        ], 
-
-        'smart_hodinky' => [  
-            'cena' => 120,
-            'mnozstvo' => 8,
-        ],
-
-        'airpods' => [
-            'cena' => 120,
-            'mnozstvo' => 8,
-        ],
-
-        'notebook' => [
-            'cena' => 900,
-            'mnozstvo' => 2,
-        ],
-        
-        'tablet' => [
-            'cena' => 450,
-            'mnozstvo' => 1,
-        ],
-        
-        'notebook' => [
-            'cena' => 450,
-            'mnozstvo' => 1,
-        ],
+// Funkcia na získanie predajných položiek
+function vypis() {
+    return [
+        'telefon' => ['cena' => 500, 'mnozstvo' => 1],
+        'smart_hodinky' => ['cena' => 120, 'mnozstvo' => 8],
+        'airpods' => ['cena' => 120, 'mnozstvo' => 8],
+        'notebook1' => ['cena' => 900, 'mnozstvo' => 2],
+        'tablet' => ['cena' => 450, 'mnozstvo' => 1],
+        'notebook2' => ['cena' => 450, 'mnozstvo' => 1],
     ];
-    return $polozky;
-};
+}
 
-// //Najpredávanejší
+// Funkcia na určenie najpredávanejšieho produktu
+function najpredavanejsi($polozky) {
+    $najviac = '';
+    $maxMnozstvo = 0;
+    foreach ($polozky as $produkt => $detaily) {
+        if ($detaily['mnozstvo'] > $maxMnozstvo) {
+            $maxMnozstvo = $detaily['mnozstvo'];
+            $najviac = $produkt;
+        }
+    }
+    return $najviac . " (" . $maxMnozstvo . " ks)";
+}
 
-
-// function najpredavanejsi ($polozky){
-//     $suma = [];
-//     foreach ($polozky as $produkt => $detail) {
-//         $suma[$produkt] = $suma[$produkt] ?? 0;  
-//         $suma[$produkt] += $detail['mnozstvo'];  
-//     }
-//         arsort($suma); 
-//         return array_key_first($suma) . 
-//         "(". reset($suma). "ks)";
-// }
-
-
-
-// function priemer (array $cisla){
-//     if (count ($cisla)===0){
-//         return 0;
-//     }
-// }
-
-
-// $sucet = array_sum($cisla);
-// $pocet = count ($cisla);
-// return $sucet / $pocet ;
-// echo "Priemer je". priemer($);
-
-// //Najpredávanejší
-
-  
-function obrat($polozky){
+// Funkcia na výpočet celkového obratu
+function obrat($polozky) {
     $spolu = 0;
-    foreach ($polozky as $produkt => $detaily){
+    foreach ($polozky as $detaily) {
         $spolu += $detaily['cena'] * $detaily['mnozstvo'];
     }
-
     return $spolu;
-} 
- 
+}
 
+// Funkcia na výpočet priemernej ceny produktov
+function priemerna_cena($polozky) {
+    $suma_cien = array_sum(array_column($polozky, 'cena'));
+    return number_format($suma_cien / count($polozky), 2);
+}
 
+// Funkcia na formátovanie čísel s medzerami
+function formatNumber($number) {
+    return number_format($number, 0, '', ' ');
+}
 
- echo '<h2>Report o predaji</h2>';
- echo '<p><strong>Celkový obrat:</strong> ' . obrat(vypis()) . ' €</p>';
-//  echo '<p><strong>Najpredávanejší produkt je:</strong> ' . najpredavanejsi(vypis());
- echo '<p><strong>Priemerná cena produktov:</strong> ';
+// Získanie výsledkov
+$polozky = vypis();
+$obrat = formatNumber(obrat($polozky));
+$najpredavanejsi = najpredavanejsi($polozky);
+$priemerna_cena = priemerna_cena($polozky);
 
+// Obsah pre súbor
+$data = "Report o predaji\n";
+$data .= "----------------------\n";
+$data .= "Celkový obrat: $obrat €\n";
+$data .= "Najpredávanejší produkt: $najpredavanejsi\n";
+$data .= "Priemerná cena produktov: $priemerna_cena €\n";
+
+// Zapísanie do súboru
+file_put_contents($desktopPath, $data);
+
+echo "Súbor 'report.txt' bol vytvorený na ploche.";
 ?>
-
-
-
-
-</body>
-</html>
